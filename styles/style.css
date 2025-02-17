@@ -11,6 +11,7 @@ html {
 .page {
   display: flex;
   justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -52,26 +53,41 @@ ol {
   background-color: #D9D9D9;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .content {
   display: grid;
   align-items: end;
   grid-template-columns: 711px 399px;
-  grid-template-rows: auto;
   grid-template-areas: 
   "result details";
   gap: 30px;
   min-width: 1140px;
-  margin: auto;
+  margin: 133px 30px;
 }
 
 .result {
+  display: grid;
   grid-area: result;
+  gap: 16px;
 }
 
 .content__details {
+  display: grid;
   grid-area: details;
-  width: 100%;
-  height: 100%;
+  gap: 16px;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: 399px;
+  outline: 1px solid red;
 }
 
 .search-form {
@@ -81,24 +97,24 @@ ol {
 }
 
 .content__list-container {
-  display: flex;
-  flex-direction: column;
-  max-height: 298px;
+  position: relative;
+  height: 298px;
+  width: 399px;
   overflow-y: auto;
-  margin-top: 23px;
+  padding-top: 10px;
 }
 
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
 }
 
 .result__video-container {
+  display: block;
   position: relative;
   height: 386px;
   width: 711px;
-  margin-bottom: 16px;
 }
  
 
@@ -111,16 +127,16 @@ ol {
 
 .content__video-card {
   display: flex;
+  flex-direction: row;
+  align-items: stretch;
   align-items: flex-start;
   justify-content: space-between;
 }
 
 .content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
-  object-position: center;
   object-fit: cover;
-  flex-shrink: 0;
+  object-position: center;
+  width: 194px
 }
 
 .search-form__fieldset-title {
@@ -134,6 +150,7 @@ ol {
   line-height: 94%;
   font-family: 'Oswald';
   text-transform: uppercase;
+  outline: 1px solid rgb(38, 0, 255);
 }
 
 .content__accent {
@@ -155,6 +172,19 @@ ol {
   overflow: hidden;
   color: #fff;
   white-space: nowrap;
+  margin-bottom: 6px;
 }
+
+.content__video-card-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+}
+
 
 /* остановился на оформлении текста */
