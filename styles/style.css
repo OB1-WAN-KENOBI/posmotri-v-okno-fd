@@ -131,7 +131,7 @@ ol {
   align-items: stretch;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 0px 2px;
+  /* padding: 0px 2px; */
 }
 
 .content__video-card-thumbnail {
@@ -250,8 +250,7 @@ ol {
 .search-form__pseudo-checkbox::after {
   content: ""; /* Нужно для отображения псевдоэлемента */
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 50% auto auto 50%;
   width: 15px;
   height: 15px;
   background-color: #fff;
@@ -263,7 +262,7 @@ ol {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.search-form__label:hover {
+.search-form__checkbox-list .search-form__label:nth-child(-n+3):hover {
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -274,4 +273,63 @@ ol {
   width: 194px;
   height: 34px;
   margin-top: auto;
+  background-color: transparent;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
 }
+
+.button:active {
+  background: #545050;
+}
+
+.button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.content__card-link {
+  display: block;
+}
+
+.content__list-item {
+  padding: 0px 3px;
+}
+
+@keyframes glowingAsh {
+  0% {
+    background-color: #545050;
+    box-shadow: 0 0 5px #545050;
+  }
+  50% {
+    background-color: #777070;
+    box-shadow: 0 0 15px #777070;
+  }
+  100% {
+    background-color: #545050;
+    box-shadow: 0 0 5px #545050;
+  }
+}
+
+.content__card-link_current {
+  animation: glowingAsh 2s ease-in-out infinite;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 5.5px;
+}
+
+
