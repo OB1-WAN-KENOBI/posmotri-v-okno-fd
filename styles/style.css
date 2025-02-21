@@ -300,6 +300,10 @@ ol {
   outline-offset: 2px;
 }
 
+.more-button {
+  width: 100%;
+}
+
 .content__card-link {
   display: block;
 }
@@ -332,4 +336,7 @@ ol {
   text-underline-offset: 5.5px;
 }
 
-
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
