@@ -53,6 +53,26 @@ ol {
   background-color: #d9d9d9;
 }
 
+/* Анимация glowingAsh изменяет фон и тень элемента для создания эффекта 
+свечения выбранной карточки. */
+
+@keyframes glowingAsh {
+  0% {
+    background-color: #545050;
+    box-shadow: 0 0 5px #545050;
+  }
+
+  50% {
+    background-color: #777070;
+    box-shadow: 0 0 15px #e07ae9;
+  }
+
+  100% {
+    background-color: #545050;
+    box-shadow: 0 0 5px #545050;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -90,7 +110,7 @@ ol {
   font-weight: bold;
   font-size: 75px;
   line-height: 94%;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   text-transform: uppercase;
   /* outline: 1px solid rgb(38, 0, 255); */
 }
@@ -152,6 +172,7 @@ ol {
 
 .content__video-card-description {
   display: -webkit-box;
+  overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   line-clamp: 4;
@@ -165,30 +186,19 @@ ol {
   padding: 0px 3px;
 }
 
-@keyframes glowingAsh {
-  0% {
-    background-color: #545050;
-    box-shadow: 0 0 5px #545050;
-  }
-
-  50% {
-    background-color: #777070;
-    box-shadow: 0 0 15px #e07ae9;
-  }
-
-  100% {
-    background-color: #545050;
-    box-shadow: 0 0 5px #545050;
-  }
-}
-
 .content__card-link_current {
+  background-color: #545050;
   animation: glowingAsh 2s ease-in-out infinite;
 }
 
 .content__card-link:hover {
   text-decoration: underline;
-  text-underline-offset: 5.5px;
+  text-underline-offset: 1.5px;
+}
+
+.content__card-link:active {
+  background: #545050;
+  text-decoration: none;
 }
 
 .content__card-link:focus-visible {
@@ -243,11 +253,12 @@ ol {
 .search-form__label {
   display: flex;
   width: fit-content;
+  gap: 5px;
 }
 
 .search-form__textfield {
   width: 225px;
-  height: 27px;
+  min-height: 27px;
   background: transparent;
   border: none;
   padding: 0;
@@ -257,7 +268,7 @@ ol {
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #fff;
   border-bottom: 1px solid #fff;
   border-top: 1px solid #fff;
   border-left: 1px solid transparent;
@@ -288,7 +299,6 @@ ol {
   position: relative;
   /* Нужно для позиционирования псевдоэлемента */
   cursor: pointer;
-  margin-right: 5px;
 }
 
 .search-form__pseudo-checkbox::after {
@@ -313,7 +323,7 @@ ol {
 .button {
   border: 1px solid #fff;
   width: 194px;
-  height: 34px;
+  min-height: 34px;
   margin-top: auto;
   background-color: transparent;
   color: #fff;
@@ -323,13 +333,14 @@ ol {
   text-align: center;
 }
 
-.button:active {
-  background: #545050;
-}
-
 .button:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.button:active {
+  background: #545050;
+   text-decoration: none;
 }
 
 .button:focus {
