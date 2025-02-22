@@ -111,7 +111,6 @@ ol {
 .content__video-card {
   display: flex;
   flex-direction: row;
-  align-items: stretch;
   align-items: flex-start;
   justify-content: space-between;
   /* padding: 0px 2px; */
@@ -280,7 +279,9 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid #fff;
   width: 19px;
   height: 19px;
@@ -292,18 +293,15 @@ ol {
 
 .search-form__pseudo-checkbox::after {
   content: "";
-  /* Нужно для отображения псевдоэлемента */
-  position: absolute;
-  inset: 50% auto auto 50%;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   background-color: #fff;
-  transform: translate(-50%, -50%) scale(0);
+  transform: scale(0);
   transition: transform 0.5s ease-in-out;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
-  transform: translate(-50%, -50%) scale(1);
+  transform: scale(1);
 }
 
 .search-form__checkbox-list .search-form__label:nth-child(-n + 3):hover {
@@ -323,7 +321,6 @@ ol {
   font-weight: 700;
   font-size: 18px;
   text-align: center;
-  color: #fff;
 }
 
 .button:active {
