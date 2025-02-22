@@ -63,6 +63,8 @@ ol {
   white-space: nowrap;
 }
 
+/* content-block */
+
 .content {
   display: grid;
   align-items: end;
@@ -71,12 +73,6 @@ ol {
   gap: 30px;
   min-width: 1140px;
   margin: 133px 30px;
-}
-
-.result {
-  display: grid;
-  grid-area: result;
-  gap: 16px;
 }
 
 .content__details {
@@ -90,12 +86,14 @@ ol {
   /* outline: 1px solid red; */
 }
 
-.search-form {
-  display: flex;
-  justify-content: space-between;
+.title {
+  font-weight: bold;
+  font-size: 75px;
+  line-height: 94%;
+  font-family: "Oswald";
+  text-transform: uppercase;
+  /* outline: 1px solid rgb(38, 0, 255); */
 }
-
-
 
 .content__list-container {
   position: relative;
@@ -108,20 +106,6 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-
-.result__video-container {
-  display: block;
-  position: relative;
-  height: 386px;
-  width: 711px;
-}
-
-.result__video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
 }
 
 .content__video-card {
@@ -138,20 +122,6 @@ ol {
   object-position: center;
   width: 194px;
   height: 103px;
-}
-
-.search-form__fieldset-title {
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 75px;
-  line-height: 94%;
-  font-family: "Oswald";
-  text-transform: uppercase;
-  /* outline: 1px solid rgb(38, 0, 255); */
 }
 
 .content__accent {
@@ -192,6 +162,73 @@ ol {
   line-height: 16px;
 }
 
+.content__list-item {
+  padding: 0px 3px;
+}
+
+@keyframes glowingAsh {
+  0% {
+    background-color: #545050;
+    box-shadow: 0 0 5px #545050;
+  }
+
+  50% {
+    background-color: #777070;
+    box-shadow: 0 0 15px #e07ae9;
+  }
+
+  100% {
+    background-color: #545050;
+    box-shadow: 0 0 5px #545050;
+  }
+}
+
+.content__card-link_current {
+  animation: glowingAsh 2s ease-in-out infinite;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 5.5px;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+/* result and search form */
+
+.result {
+  display: grid;
+  grid-area: result;
+  gap: 16px;
+}
+
+.result__video-container {
+  display: block;
+  position: relative;
+  height: 386px;
+  width: 711px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+}
+
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
@@ -213,10 +250,10 @@ ol {
   width: 225px;
   height: 27px;
   background: transparent;
-  border: none; 
-  padding: 0; 
-  margin: 0; 
-  outline: none; 
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
   appearance: none;
   font-family: "Fira Sans Condensed", sans-serif;
   font-weight: 400;
@@ -247,13 +284,15 @@ ol {
   border: 1px solid #fff;
   width: 19px;
   height: 19px;
-  position: relative; /* Нужно для позиционирования псевдоэлемента */
+  position: relative;
+  /* Нужно для позиционирования псевдоэлемента */
   cursor: pointer;
   margin-right: 5px;
 }
 
 .search-form__pseudo-checkbox::after {
-  content: ""; /* Нужно для отображения псевдоэлемента */
+  content: "";
+  /* Нужно для отображения псевдоэлемента */
   position: absolute;
   inset: 50% auto auto 50%;
   width: 15px;
@@ -267,7 +306,7 @@ ol {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.search-form__checkbox-list .search-form__label:nth-child(-n+3):hover {
+.search-form__checkbox-list .search-form__label:nth-child(-n + 3):hover {
   cursor: pointer;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -310,35 +349,5 @@ ol {
   margin-top: 30px;
 }
 
-.content__list-item {
-  padding: 0px 3px;
-}
 
-@keyframes glowingAsh {
-  0% {
-    background-color: #545050;
-    box-shadow: 0 0 5px #545050;
-  }
-  50% {
-    background-color: #777070;
-    box-shadow: 0 0 15px #e07ae9;
-  }
-  100% {
-    background-color: #545050;
-    box-shadow: 0 0 5px #545050;
-  }
-}
 
-.content__card-link_current {
-  animation: glowingAsh 2s ease-in-out infinite;
-}
-
-.content__card-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 5.5px;
-}
-
-.content__card-link:focus-visible {
-  outline: 1px solid #fff;
-  outline-offset: 2px;
-}
