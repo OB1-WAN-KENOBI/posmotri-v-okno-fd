@@ -102,7 +102,6 @@ ol {
   height: 298px;
   width: 399px;
   overflow-y: auto;
-  padding-top: 2px;
 }
 
 .content__list {
@@ -160,6 +159,7 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: #fff;
 }
@@ -171,9 +171,14 @@ ol {
   line-height: 100%;
   text-transform: uppercase;
   text-overflow: ellipsis;
+  overflow: hidden;
   color: #fff;
   white-space: nowrap;
   margin-bottom: 6px;
+}
+
+.content__video-card-description-container {
+  max-width: 195px;
 }
 
 .content__video-card-description {
@@ -301,11 +306,8 @@ ol {
 }
 
 .more-button {
-  width: 100%;
-}
-
-.content__card-link {
-  display: block;
+  width: 394px;
+  margin-top: 30px;
 }
 
 .content__list-item {
@@ -319,7 +321,7 @@ ol {
   }
   50% {
     background-color: #777070;
-    box-shadow: 0 0 15px #777070;
+    box-shadow: 0 0 15px #e07ae9;
   }
   100% {
     background-color: #545050;
