@@ -1,9 +1,9 @@
-[ -RU] (#Проект "Посмотри в окно")
-[ -EN] (#Project "Look Out the Window")
+- [RU](#проект-посмотри-в-окно)
+- [EN](#project-look-out-the-window)
 
 
 
-# Проект "Посмотри в окно"
+## Проект "Посмотри в окно"
 
 ## Описание
 "Посмотри в окно" — это учебный веб-проект, выполненный в рамках второго курса Яндекс.Практикума. Приложение позволяет искать и просматривать видео по заданному городу и времени суток (утро, день, ночь). Моя основная задача заключалась в создании верстки (HTML и CSS), включая адаптивный дизайн, стилизацию и анимации. Логика на JavaScript была предоставлена Яндекс.Практикумом как заготовка для интеграции с API.
@@ -46,7 +46,7 @@
 - Попробовать самостоятельно реализовать часть JavaScript-логики.
 - Добавить локализацию интерфейса.
 
-# Project "Look Out the Window"
+## Project "Look Out the Window"
 
 ## Description
 "Look Out the Window" is an educational web project developed as part of the second course at Yandex Practicum. The application allows users to search and view videos based on a specified city and time of day (morning, afternoon, night). My main task was to create the layout (HTML and CSS), including responsive design, styling, and animations. The JavaScript logic was provided by Yandex Practicum as a template for API integration.
